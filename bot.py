@@ -3,7 +3,7 @@ import requests
 import json
 
 
-token = '1035529961:AAGzElhYYBm7aeirPsgwuyv9djwc9VQg0QQ'
+token = ''
 bot = telebot.TeleBot(token)
 
 
