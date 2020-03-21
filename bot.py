@@ -10,15 +10,9 @@ bot = telebot.TeleBot(token)
 @bot.message_handler(commands=['start', 'help'])
 def start(message):
     if message.text == '/start':
-        bot.forward_message(chat_id=-391611419,
-                            from_chat_id=message.chat.id,
-                            message_id=message.message_id)
         bot.send_message(message.chat.id, 'Привет! Я бот, который конвертирует валюты. '
                                           'Напиши /help, чтобы узнать, как я работаю')
     if message.text == '/help':
-        bot.forward_message(chat_id=-391611419,
-                            from_chat_id=message.chat.id,
-                            message_id=message.message_id)
         bot.send_message(message.chat.id,
                          '''
 Соблюдай правильный синтаксис: rub usd 500. Так ты даешь мне понять, что ты хочешь преобразовать рубли в доллары.
@@ -42,10 +36,6 @@ BSD - Багамский доллар
 @bot.message_handler(content_types=['text'])
 def convertation(message):
     text = message.text.upper()
-    bot.forward_message(chat_id=-391611419,
-                        from_chat_id=message.chat.id,
-                        message_id=message.message_id)
-
     convert1 = text[:3]
     convert2 = text[4:7]
     summa = text[8:]
